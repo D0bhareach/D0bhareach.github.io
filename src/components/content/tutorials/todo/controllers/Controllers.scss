@@ -1,0 +1,47 @@
+@import '../todo-common';
+/* Form holiding two divs: main and hidden*/
+.controllers{
+    padding: 1rem $sections-side-padding;
+    display: grid;
+    grid-row-gap: $todo-controllers-row-gap;
+    grid-column-gap: $todo-controllers-column-gap;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto;
+}
+
+/* Specific classes for holders*/
+.search-holder{
+    grid-row: 1;
+    grid-column: 1/4;
+}
+
+.section-holder{
+    grid-row: 1;
+    grid-column: 4/6;
+}
+
+.search-options-holder{
+    grid-row: 2;
+    grid-column: 1/3;
+}
+
+/*Holder of buttons in main section*/
+.button-holder{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    grid-row: 2;
+    grid-column: 4/6;
+}
+
+.search-input{
+    min-width: 200px;
+    width: 100%;
+}
+
+.section-input, .search-options-input{
+    min-width: 100px;
+    width: 100%;
+}
+/* works until 768px */

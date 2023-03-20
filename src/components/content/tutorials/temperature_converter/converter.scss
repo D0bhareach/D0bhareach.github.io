@@ -1,0 +1,78 @@
+@import '../../../common';
+/*
+conveter - main div
+ */
+.converter {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+.converter__input{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    margin: 10px auto;
+    width: 14rem;
+}
+.converter__input__field{
+   width: 6rem; 
+   padding: 0.3rem 0.4rem;
+   font-size: 1.07rem;
+   margin-left: 20px;
+}
+.converter__input__field:invalid{
+    border: solid 2px $text-error;
+}
+
+.converter__input__field:focus{
+    outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input.converter__input__field::-webkit-outer-spin-button,
+input.converter__input__field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input.converter__input__field[type=number] {
+  -moz-appearance: textfield;
+}
+
+.conveter__verdict{
+    text-align: center;
+   font-size: 1.07rem;
+}
+/*Classes to stype component__verdict(span)*/
+.text-success{ color: $text-error}
+.text-info{color: $text-info}
+
+@media screen and (min-width: 768px) {
+.converter {
+    flex-flow: row wrap;
+}
+    
+.converter__input{
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 10px;
+    border: solid 1px #ddd;
+    border-radius: 3px;
+    width: auto;
+}
+.converter__input__legend{
+    margin-bottom: 8px;
+}
+
+.converter__input__field{
+   margin-left: 0;
+}
+
+.conveter__verdict{
+    display: block;
+    width: 100%;
+    align-self: center;
+}
+}

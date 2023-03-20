@@ -1,0 +1,36 @@
+@import '../../common';
+
+:root {
+--navigation-icon-size: 25px;
+--navigation-icon-font-size: 24px; 
+}
+
+@media screen and (min-width: 480px) {
+:root{
+--navigation-icon-size: 36px;
+--navigation-icon-font-size: 35px; 
+    }
+
+}
+
+/* Container for TopBar and main-content-holder class. */
+/*
+
+/*span button to toggle navigation menu*/
+.menu-toggle-button {
+    width: var(--navigation-icon-size);
+    height: var(navigation-icon-size);
+    position: sticky;
+    padding: auto;
+    float: left;
+    font-size: var(--navigation-icon-font-size) !important;
+    background-color: transparent;
+    z-index: 10;
+}
+
+
+.menu-toggle-button:hover {
+    color: $icons-hover-color;
+    cursor: pointer;
+}
+

@@ -1,0 +1,181 @@
+@import '../../common';
+/*Some variables that depends on each other or repetativ.
+ * navigation-width - navigation-list-left-margin = navigation-item-width*/
+
+:root {
+    --navigation-width: 24vw;
+    --navigation-list-side-margin: 1vw;
+    --navigation-item-width: 22vw;
+}
+
+
+@mixin navigation-text {
+    font-size: 1.07rem;
+    font-weight: 500;
+}
+
+.navigation {
+    background-color: grey;
+    transition: all 400ms linear;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    padding-top: 1rem;
+    max-width: 0;
+    opacity: 0.25;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.navigation::-webkit-scrollbar {
+    display: none;
+}
+
+/*These two rules are determine size of the navigation panel.
+ * They are changed dynamically with button click event. They added to navigation class*/
+.menu-show {
+    opacity: 1;
+    width: var(--navigation-width);
+    max-width: var(--navigation-width);
+}
+
+/* Small screens small navigation*/
+.small-screen-close-navigation {
+    display: none;
+    flex-flow: row nowrap;
+    align-items: center;
+    cursor: pointer;
+
+}
+.small-screen-close-navigation span{
+    font-size: 32px;
+    margin-right: 1rem;
+}
+.small-screen-close-navigation:hover span{
+    color: $icons-hover-color;
+}
+/* Main holder for actual menu items.*/
+.navigation-list {
+    /*Margin of whole navigation list on the left, don't forget to deduct*/
+    margin: 0 var(--navigation-list-side-margin);
+    word-break: normal;
+    white-space: nowrap;
+    padding: 0px;
+    overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    /* transition: all 2s linear; */
+}
+.navigation-list::-webkit-scrollbar {
+    display: none;
+}
+
+.navigation-list a {
+    @include navigation-text;
+    display: block;
+    margin: 0;
+    inline-size: var(--navigation-item-width);
+    text-decoration: none;
+    color: inherit;
+    text-align: left;
+    float: left;
+    clear: both;
+    cursor: pointer;
+
+}
+
+.navigation-list a:hover {
+    color: $link-hover-color;
+}
+
+.navigation-item {
+    display: flex;
+    margin: 1rem 0;
+    width: var(--navigation-item-width);
+    height: 32px;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Naviagation Sub Menu one with dropdown effect*/
+.naviagation__sub-menu {
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/*Swith off default icon for .naviagation__sub-menu*/
+.naviagation__sub-menu > summary {
+    @include navigation-text;
+    list-style-type: none;
+}
+
+.naviagation__sub-menu > summary::-webkit-details-marker {
+    display: none;
+}
+
+.naviagation__sub-menu > summary:hover {
+    cursor: pointer;
+    color: $link-hover-color;
+}
+
+
+.naviagation__sub-menu > summary > span::after {
+    @include navigation-text;
+    float: right;
+    font-family: "Material Icons";
+    font-size: 32px; /*Candidat to media and to variable..*/
+    margin: 0 1rem;
+    content: '\e5cf';
+    margin-left: 1.3rem;
+}
+
+.naviagation__sub-menu[open] > summary > span::after {
+    font-family: "Material Icons";
+    content: '\e5ce';
+    margin-left: 1.3rem;
+}
+
+/* move submenu items to the right */
+.naviagation__sub-menu .navigation-item:not(summary) {
+    border-left: solid 2px black;
+    padding-left: 1rem;
+}
+
+
+
+@media screen and (max-width: 480px){
+:root{
+    --navigation-width: 100vw;
+    --navigation-list-side-margin: 1rem;
+}
+.small-screen-close-navigation {
+    display:flex;
+}
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px){
+:root {
+    --navigation-width: 65vw;
+    --navigation-list-side-margin: 1rem;
+}
+
+.small-screen-close-navigation {
+    display:flex;
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+:root {
+    --navigation-width: 45vw;
+    --navigation-list-side-margin: 1rem;
+}
+
+.small-screen-close-navigation {
+    display:flex;
+}
+}

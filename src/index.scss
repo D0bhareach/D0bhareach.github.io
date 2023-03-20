@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #fff;
+    background-color: rgb(48, 48, 48);
+}
+
+#root {
+    position: relative;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100vw;
+}
+
+/*
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+*/
+
+.background-dark-grey {
+    background-color: rgb(48, 48, 48);
+}
+
+.background-middle-grey {
+    background-color: #424242;
+}
+
+
+/*-------------------- Main Content Holder------------------- */
+/**Base style for .main-content-holder it's about to be included in
+* routable components and use as a common ancestor.
+* It not necessary to have mixin here, but I just try to bring mixin in
+* childre scss from common, yes it's possible to use and than include.
+ */
+
+@mixin common-main-content-holder() {
+    section {
+        text-align: left;
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 0 8px;
+    }
+    @media screen  and (max-width: 768px) and (min-width: 480px){
+        padding: 0  16px;
+    }
+    @media screen and (min-width: 768px) {
+        padding: 0 80px;
+    }
+}
+
+
+.main-content-holder {
+@include common-main-content-holder;
+}
+
+
+/* Text that is used mainly in Info Components, must be long and dool.*/
+/*The idea was to introduce new element to hold all texts on the site, but because of 
+ React limitation to insert innerHtml I decided to do separate *Info element for each
+ Text on the page. For semantics look in content/tutorials/text.
+ */
+.text__title{
+    font-size: 1.2rem;
+}
+.text__paragraph{
+    text-indent: 1rem;
+    line-height:1.35rem;
+}
+
+/*
+.text__paragraph::first-letter{
+    font-size: 1.35rem;
+    font-family: "Sofia", sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: 500;
+}
+*/

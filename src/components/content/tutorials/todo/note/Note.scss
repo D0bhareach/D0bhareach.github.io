@@ -1,0 +1,84 @@
+.Note {
+    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    float: left;
+     margin:auto;
+    color: rgb(26, 26, 26);
+    background-color: rgb(242, 242, 242);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 0.8rem;
+    transition: box-shadow .3s;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+    &:hover {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+        .Note__del-icon {
+            visibility: visible;
+        }
+    }
+}
+
+/* span with title text inside note__header dir*/
+.Note__title {
+    max-width: 80%;
+    font-weight: 500;
+    color: #000;
+}
+
+.Note__del-icon {
+    float: right;
+    visibility: hidden;
+    color: rgba(0,0,0,0.6);
+    cursor: pointer;
+    font-size: 1,5em;
+    font-weight: bold;
+}
+.Note_text{
+  display: block;
+  clear:both;
+  margin-top:5px; 
+  border: solid 1px blue;
+    
+}
+.note__header{
+    border: solid 1px violet;
+    cursor: pointer;
+    }
+
+/* material icon button (span)*/
+.Note__menu-button:hover {
+    color: blue;
+}
+
+.note__header {}
+
+/* div holder of all info*/
+.note__info{
+    border: solid 1px red;
+}
+
+/*div holder for creation time*/
+.note__creation {
+
+}
+/* note modified time holding div*/
+.note__creation, .note__modified{
+    padding: 0.3rem 0;
+    font-size: 0.85rem;
+}
+.note__modified {
+}
+/* span with modification times*/
+.note__modified-time{
+    display: inline-block;
+    margin: 0.2rem 0.6rem;
+    border: solid 1px black;
+    padding: 0.2rem;
+
+}
+

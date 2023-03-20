@@ -1,0 +1,27 @@
+$sections-side-padding: 2vw;
+$todo-controllers-row-gap: 13px;
+$todo-controllers-column-gap: 21px;
+
+.labeled-input > label, .labeled-input > input {
+    display: block;
+}
+.labeled-input > label {
+    padding-bottom: 0.4rem;
+}
+
+.labeled-input  input, .labeled-input > select, .labeled-input > textarea {
+    padding: 0.3rem 1rem;
+}
+
+.labeled-input  input:focus, .labeled-input > textarea:focus{
+    outline:none;
+}
+.labeled-input > option {
+    font-size: 1.3rem;
+}
+
+.todo-btn {
+    padding: 0.5rem 0.8rem;
+    height: 2rem;
+}
+/*works until 480px.*/

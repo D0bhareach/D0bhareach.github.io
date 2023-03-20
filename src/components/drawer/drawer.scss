@@ -1,0 +1,67 @@
+@import '../common';
+/**
+* drawer-container - wrapper around whole drawer
+* drawer-toggle - button
+* drawer-content - wrapper around content of dropdown
+*/
+.drawer-container, .drawer-toggle, .drawer-content {
+margin:0;
+padding: 0;
+}
+
+.drawer-container {
+    margin: 0.8rem 0;
+}
+
+.drawer-toggle {
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 450;
+    padding: 10px 0;
+    background: linear-gradient(70deg, blue, pink);
+    box-shadow: -1px -1px 2px grey;
+}
+
+.drawer-toggle.visible {
+    border-radius: 8px 8px 0 0;
+}
+
+.drawer-toggle:active {
+    box-shadow: 1px 1px 3px black;
+}
+
+
+.drawer-content {
+    border: 1px solid transparent;
+    border-radius: 0 0 8px 8px;
+    background: $main-background;
+    overflow: hidden;
+    height: 0;
+    max-height: 0;
+    -webkit-transition: max-height 0.5s 0.2s linear;
+       -moz-transition: max-height 0.5s 0.2s linear;
+        -ms-transition: max-height 0.5s 0.2s linear;
+         -o-transition: max-height 0.5s 0.2s linear;
+            transition: max-height 0.5s 0.2s linear;
+}
+
+.drawer-content.visible {
+    background-color: $drawer-background;
+    overflow-y: auto;
+    height: auto;
+    max-height: 5000px;
+    -webkit-transition: max-height 0.5s linear;
+       -moz-transition: max-height 0.5s linear;
+        -ms-transition: max-height 0.5s linear;
+         -o-transition: max-height 0.5s linear;
+            transition: max-height 0.5s linear;
+    overflow-y: auto;
+}
+
+
+.drawer-content p {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}

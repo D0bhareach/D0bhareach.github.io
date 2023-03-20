@@ -1,0 +1,17 @@
+@import '../todo-common.scss';
+@import '../../../../common.scss';
+
+.usage-info {
+    padding: 0 $sections-side-padding;
+}
+
+.usage-info__section{
+    background-color: $dark-45;
+    padding: 0.8rem;
+    margin: 0.56rem 0;
+    border-radius: 3px;
+}
+
+.usage-info__section__text{
+    line-height: 1.7rem;
+}

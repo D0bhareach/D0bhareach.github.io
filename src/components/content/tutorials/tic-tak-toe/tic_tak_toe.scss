@@ -1,0 +1,291 @@
+@import '../../../common';
+/*
+.game - main holder of component.
+.board-square  - square of game board
+.game-board - board of squares where all game is happening.
+.game-history - holder of a history
+.game-history-list - history ul
+.board-row - row of squares on game-board.
+*/
+
+:root {
+ --square-dimension-sm: 26vw;
+ --board-dimension-sm: 78vw;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+  "game__status"
+  "game__board";
+  width: var(--board-dimension-sm);
+  margin: 0 auto;
+}
+
+/*Game when history button is visible*/
+.game.show-history {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 15vw;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+  "game__status game__history"
+  "game__board game__history";
+  width: 100%;
+}
+
+.game__status {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: 1fr auto  1fr;
+    grid-template-areas:
+    "button_new  status__text button_show";
+    justify-content: center;
+    align-items: center;
+   grid-area: game__status; 
+}
+
+.game__status.show-history{
+    padding-left: 2vw;
+    width: var(--board-dimension-sm);
+    align-self: start;
+   grid-area: game__status; 
+}
+
+.game__status__text{
+    text-align: center;
+    padding: 0 8px;
+   grid-area: status__text; 
+}
+
+.button_new{
+   grid-area: button_new; 
+   justify-self: start;
+   height: auto;
+}
+
+.button_show{
+   grid-area: button_show; 
+   justify-self: end;
+   height: auto;
+}
+
+.game__status__button {
+    padding: 0.3rem 0.5rem;
+    border-radius: 3px;
+    max-width: 45vw;
+}
+
+/*
+.text__optional{
+    display: none;
+}
+*/
+
+
+.game__board__square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 54px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  height: var(--square-dimension-sm);
+  width: var(--square-dimension-sm);
+}
+
+
+.game__board{
+    font: 14px "Century Gothic",Futura,sans-serif;
+    height: var(--board-dimension-sm);
+    width: var(--board-dimension-sm);
+    margin:10px auto;
+    grid-area: game__board;
+}
+
+/* for bigger screens watch for margin !!*/
+.game__board.show-history {
+    align-self: end;
+    margin:10px 2vw;
+    grid-area: game__board;
+}
+
+.game__history {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    grid-area: game__history;
+    margin-top: 10px;
+}
+/*
+.game__history__legend{
+    margin-left: 20px;
+}
+*/
+
+/*Array of a tags for history*/
+.game__history__list{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+/* a link in game history*/
+.game__history__button {
+    text-align: center;
+    width: 9vw;
+    margin: 0.4rem 0.3rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    background: transparent;
+    /*
+    padding: 0.25rem 0.45rem;
+    flex-grow: 0;
+    flex-shrink:0;
+    flex-basis: 26vw;
+    min-width: 26vw;
+    max-width: 26vw;
+    */
+}
+.game__history__button:hover {
+    color: $icons-hover-color;
+    border-color: $icons-hover-color;
+}
+
+@media screen and (min-width: 480px) {
+:root{
+ --square-dimension-sm: 20vw;
+ --board-dimension-sm: 60vw;
+
+}
+
+.game {
+    margin: 0 auto;
+    width: var(--board-dimension-sm);
+}
+
+.game.show-history {
+  grid-template-columns: calc(var(--board-dimension-sm) + 4vw) 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+  "game__status game__status"
+  "game__board game__history";
+  width: 100%;
+}
+
+.game__status.show-history{
+    width: 100%;
+    padding: 0 2vw;
+}
+
+.game__board {
+    margin: auto;
+    margin-top: 10px;
+    padding: 0;
+    width: var(--board-dimension-sm);
+    height: var(--board-dimension-sm);
+}
+
+
+.game__history__list {
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.game__history__button {
+    padding: 0.3rem 0px;
+    text-align: center;
+    margin: 0.4rem 3px;
+    flex-grow: 1;
+    flex-basis: 9vw;
+    min-width:  60px;
+    max-width:  12vw;
+    max-height: 1.9rem;
+}
+}
+
+
+
+@media screen and (min-width: 570px) {
+:root{
+ --square-dimension-sm: 17vw;
+ --board-dimension-sm: 51vw;
+
+}
+
+}
+/* and bigger=>*/
+@media screen and (min-width: 670px) {
+:root{
+ --square-dimension-sm: 90px;
+ --board-dimension-sm: 270px;
+
+}
+.game{
+
+    width: 100%;
+    justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto auto;
+  grid-template-areas: 
+  "game__status"
+  "game__board"
+  "game__history";
+}
+
+.game.game.show-history{
+    width: inherit;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+  "game__status"
+  "game__board"
+  "game__history";
+}
+
+.game__board.show-history{
+    margin: 10px auto;
+}
+
+/*this two rules below are some sort of a hack, otherwise top status will be jumpy*/
+.game__status{
+    width: var(--board-dimension-sm);
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: var(--board-dimension-sm);
+    min-width:  var(--board-dimension-sm);
+    max-width:  calc(var(--board-dimension-sm) + 4vw);
+    justify-self: center;
+}
+
+.game__status.show-history{
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: var(--board-dimension-sm);
+    min-width:  var(--board-dimension-sm);
+    max-width:  calc(var(--board-dimension-sm) + 4vw);
+}
+
+.game__history {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.game__history__button {
+    flex-shrink: 1;
+    flex-basis: 7vw;
+    min-width:  50px;
+    max-width:  100px;
+}
+}

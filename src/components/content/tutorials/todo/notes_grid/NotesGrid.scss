@@ -1,0 +1,27 @@
+@import '../todo-common.scss';
+
+.NotesGrid {
+    margin: 0.8rem  $sections-side-padding;
+    padding: 0;
+}
+
+#NotesList{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width:100%;
+
+
+}
+
+.ListItem{
+    display: flex;
+  justify-content: center;
+    margin: 0;
+    width:100%;
+    max-width:530px;
+    padding:0;
+}

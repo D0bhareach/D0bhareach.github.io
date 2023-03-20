@@ -1,0 +1,82 @@
+@import '../todo-common.scss';
+
+.create-new-note{
+padding: 16px $sections-side-padding;
+display: grid;
+grid-template-rows: auto auto auto;
+grid-template-columns: auto 38% 10rem;
+grid-row-gap: $todo-controllers-row-gap;
+grid-column-gap: $todo-controllers-column-gap;
+}
+
+.create-new-note__textarea{
+    resize: none;
+}
+
+.note-title{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    min-width: 100%;
+    width: 100%;
+}
+.note-group{
+    grid-row: 1/2;
+    grid-column: 2/3;
+    width: 100%;
+}
+
+// flag class for input. marks labeled-input as add group. div tag.
+.adding-group{
+    width: 100%;
+    display: relative;
+}
+.adding-group > .create-new-note__section{
+    display: inline;
+    width: 64%;
+    float: left;
+}
+
+// side cancel button for create new group element.
+.adding-group > button{
+    /*margin-left: $todo-controllers-row-gap;*/
+    width: 30%;
+    float: right;
+    padding: 0.5rem 0.8rem;
+    height: 2rem;
+}
+/*make inputs stretch full width of container div*/
+.create-new-note__section, .create-new-note__title{
+    max-width: 100%;
+    width: 100%;
+}
+.note-textarea{
+    grid-row: 2/4;
+    grid-column: 1/3;
+    max-width: 100%;
+    width: 100%;
+}
+/* textarea tag element*/
+.create-new-note__textarea{
+    max-width: 100%;
+    width: 100%;
+}
+
+
+// controll buttons of component
+.new-btn{
+    grid-row: 1/2;
+    grid-column: 3/4;
+    align-self: last baseline;
+}
+.save-btn{
+    grid-row: 3/4;
+    grid-column: 3/4;
+    align-self: last baseline;
+}
+
+.cancel-btn{
+grid-row: 2/3;
+grid-column: 3/4;
+align-self: end;
+}
+/* Works until 768px*/
