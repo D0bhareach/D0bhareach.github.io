@@ -55,6 +55,9 @@ code {
 @mixin common-main-content-holder() {
     section {
         text-align: left;
+        a {
+            color: #4d94ff;
+        }
     }
 
     @media screen and (max-width: 480px) {

@@ -1,0 +1,39 @@
+@mixin responsive-margin {
+
+    @media screen and (max-width: 480px) {
+        section {
+            p {
+            padding: 0;
+            margin: 0;
+            border: solid 1px red;
+            }
+        }
+    }
+    @media screen  and (max-width: 768px) and (min-width: 480px){
+        p{
+            margin: 0  16px;
+        }
+    }
+    @media screen and (min-width: 768px) {
+        p {
+            margin: 0 80px;
+        }
+    }
+}
+.main-content-holder {
+// @include responsive-margin();
+    section {
+        p {
+        // margin: 0 5rem;
+            ol {
+                li {
+                    padding: 0.4rem 0;
+                }
+            }
+        }
+        h4 {
+            margin-left: 5rem;
+        }
+
+    }
+}

@@ -173,11 +173,11 @@ function getNavData(){
         {path:"/", name: "Home"},
         {path: "tutorials", name: "React First Steps", title:"simple follow up's for tutorials" },
         {path: "about", name: "About Me"},
-        /*
         {
-            name: "First Sub Menu",
+            name: "Rust Blog",
             links: [
-                {path: "sub/first_sub_component", name: "First Sub Component"},
+                {path: "rust_blog/rust_learning_path", name: "Rust Learning Path"},
+                {/*
                 {path: "sub/second_sub_component", name: "Second Sub Component"},
                 {  name: "Sub Sub Menu",
                     level: 1,
@@ -187,11 +187,13 @@ function getNavData(){
 
                     ]
                 }
+            */}
 
             ]
         },
 
 
+        /*
         {path: "about", name: "About"},
 
         {
