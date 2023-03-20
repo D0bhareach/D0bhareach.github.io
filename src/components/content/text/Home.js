@@ -18,7 +18,7 @@ export default function HomeInfo(){
         some ideas of what I could put on this site, how to orginize things, how to improve
         what is already done, plese contact me by e-mail.
         </p>
-        <p className="text__paragraph">
+        {/*<p className="text__paragraph">
         If you would like me to develop site for you, join your team. Offer me a possition.
         Have buisiness propositions. Don't hesitate to contact me.
         </p>
@@ -27,10 +27,13 @@ export default function HomeInfo(){
         buy a hosting and pay for a domain name, but I will work for free, well, in return
         I would like you to do a good design for this site.
         </p>
+    */}
         <p className="text__paragraph">
-        Plans for this website. At the moment I'm looking for a position as front end
-        developer with React, again ). So this site, again, is my portfolio.
-        I also planning to have blog section about programming and all other interesting things.
+        Plans for this website. Usually I scarcely have time for work on this project.
+        I may slow things down a bit and will try to make this site more like a programmer blog.
+        It takes time to write good content so I wouldn't expect progress on this site will be
+        rather ubrupt and hectic. For example, work on Todo App is postponed until better times.
+        Things are comlicated even more since I started write code with Rust.
         </p>
         </section>
     </>);
