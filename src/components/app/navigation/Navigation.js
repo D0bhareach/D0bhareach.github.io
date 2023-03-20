@@ -171,8 +171,8 @@ export function createMenu(data) {
 function getNavData(){
     return [
         {path:"/", name: "Home"},
-        {path: "tutorials", name: "First Steps", title:"simple follow up's for tutorials" },
-        {path: "about", name: "About"},
+        {path: "tutorials", name: "React First Steps", title:"simple follow up's for tutorials" },
+        {path: "about", name: "About Me"},
         /*
         {
             name: "First Sub Menu",
