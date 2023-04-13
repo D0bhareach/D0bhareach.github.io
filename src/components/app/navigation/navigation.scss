@@ -101,7 +101,7 @@
 }
 
 /* Naviagation Sub Menu one with dropdown effect*/
-.naviagation__sub-menu {
+.navigation__sub-menu {
     display: block;
     margin: 0;
     padding: 0;
@@ -109,22 +109,22 @@
 }
 
 /*Swith off default icon for .naviagation__sub-menu*/
-.naviagation__sub-menu > summary {
+.navigation__sub-menu > summary {
     @include navigation-text;
     list-style-type: none;
 }
 
-.naviagation__sub-menu > summary::-webkit-details-marker {
+.navigation__sub-menu > summary::-webkit-details-marker {
     display: none;
 }
 
-.naviagation__sub-menu > summary:hover {
+.navigation__sub-menu > summary:hover {
     cursor: pointer;
     color: $link-hover-color;
 }
 
 
-.naviagation__sub-menu > summary > span::after {
+.navigation__sub-menu > summary > span::after {
     @include navigation-text;
     float: right;
     font-family: "Material Icons";
@@ -134,15 +134,15 @@
     margin-left: 1.3rem;
 }
 
-.naviagation__sub-menu[open] > summary > span::after {
+.navigation__sub-menu[open] > summary > span::after {
     font-family: "Material Icons";
     content: '\e5ce';
     margin-left: 1.3rem;
 }
 
 /* move submenu items to the right */
-.naviagation__sub-menu .navigation-item:not(summary) {
-    border-left: solid 2px black;
+.navigation__sub-menu .navigation-item:not(summary) {
+    /*border-left: solid 2px black;*/
     padding-left: 1rem;
 }
 

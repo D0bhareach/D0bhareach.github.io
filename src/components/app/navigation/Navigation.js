@@ -175,9 +175,10 @@ function getNavData(){
         {path: "about", name: "About Me"},
         {
             name: "Rust Blog",
+            level: 0,
             links: [
                 {path: "rust_blog/rust_learning_path", name: "Rust Learning Path"},
-                {/*
+                /*
                 {path: "sub/second_sub_component", name: "Second Sub Component"},
                 {  name: "Sub Sub Menu",
                     level: 1,
@@ -187,7 +188,7 @@ function getNavData(){
 
                     ]
                 }
-            */}
+            */
 
             ]
         },
